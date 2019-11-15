@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(Página atual)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/testimonials">Depoimentos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/products">Produtos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sensors">Sensores</a>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Administração
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/admin/posts">Posts</a>
+            <a class="dropdown-item" href="/admin/products">Produtos</a>
+          </div>
+      </li>
+    </ul>
+    <% if (locals.loggedUser) { %>
+      <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= locals.loggedUser.email %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/auth/logout">Sair</a>
+              </div>
+          </li>
+      </ul>
+    <% } else { %>
+      <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link " href="/cart">
+                Carrinho
+              </a>
+          </li>
+      </ul>
+    <% } %> 
+    
+  </div>
+</nav>

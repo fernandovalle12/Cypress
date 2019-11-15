@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%- include('imports'); -%>
+  </head>
+  <body>
+    <%- include('navbar'); -%>
+    
+    <div class="container">
+
+      <div class="row">
+        <% if(!products || products.length == 0) { %>
+          <p>Carrinho vazio</p>
+        <% } else { %>
+          <% products.forEach((product) => { %>
+            <div class="card col-md-12">
+              <img src="<%= `/images/${product.image}` %>" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= product.name %>
+                </h5>
+                <p class="card-text">
+                    <%= product.description %> - <b>R$<%= product.price %></b>
+                </p>
+              
+              </div>
+            </div>
+          <% }); %>
+        <% } %>
+      </div>
+
+      <div class="row cart-bottom-menu">
+        <div class="col-md-4">
+          <a href="/cart/clear">Limpar carrinho</a>
+        </div>
+        <div class="col-md-8">
+          <p class="cart-total">Total: R$<%= totalSum %></p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Posts</title>
+  <%- include('../../imports'); -%>
+</head>
+<body>
+  <%- include('../../navbar'); -%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Novo Produto</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+          <form action="create" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="productName">Nome</label>
+                <input name="name" type="text" class="form-control" id="productName" placeholder="Nome do produto">
+              </div>
+              <div class="form-group">
+                <label for="productImage">Imagem</label>
+                <input type="file" name="image" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="productDescription">Descrição</label>
+                <textarea name="description" type="text" class="form-control" id="productDescription" placeholder=""></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="productPrice">Valor</label>
+                <input name="price" type="number" class="form-control" id="productPrice" placeholder="Valor do produto">
+              </div>
+              <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+      </div>
+        
+    </div>
+  </div>
+</body>
+</html>

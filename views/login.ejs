@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login</title>
+  <%- include('imports'); -%>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6">
+        <form class="form-signin" method="POST" action="login">
+          <div class="text-center mb-4">
+            <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+          </div>
+
+          <% if (msg) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= msg %>
+            </div>
+          <% } %>
+
+          <div class="form-label-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+          </div>
+
+          <div class="form-label-group">
+            <label for="inputPassword">Senha</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+          </div>
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

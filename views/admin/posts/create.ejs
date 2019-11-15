@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Posts</title>
+  <%- include('../../imports'); -%>
+</head>
+<body>
+  <%- include('../../navbar'); -%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Novo Post</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+          <form action="create" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="postTitle">Título</label>
+                <input name="title" type="text" class="form-control" id="postTitle" placeholder="Título do post">
+              </div>
+              <div class="form-group">
+                <label for="postImage">Imagem</label>
+                <input type="file" name="image" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="postDescription">Descrição</label>
+                <textarea name="description" type="text" class="form-control" id="postDescription" placeholder=""></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="postBody">Corpo do Post</label>
+                <textarea name="postBody" type="text" class="form-control" id="postBody" placeholder=""></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+      </div>
+        
+    </div>
+  </div>
+</body>
+</html>

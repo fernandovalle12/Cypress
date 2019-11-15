@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%- include('imports'); -%>
+  </head>
+  <body>
+    <%- include('navbar'); -%>
+    
+    <div class="container">
+
+      <div class="row">
+        <% products.forEach((product) => { %>
+          <div class="card col-md-12">
+            <img src="<%= `/images/${product.image}` %>" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= product.name %>
+              </h5>
+              <p class="card-text">
+                <%= product.description %> - <b>R$<%= product.price %></b>
+              </p>
+              <a href="/cart/<%= product.id %>" class="btn btn-primary">Adicionar</a>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+
+  </body>
+</html>
