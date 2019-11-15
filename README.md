@@ -10,11 +10,14 @@
     npm start
 
 5. Para usar o Cypress
+
     npx cypress open ou ./node_modules/.bin/cypress open
     
 -------------------------------------------- Informações adicionais sobre o Cypress ----------------------------------------------
 
 Para rodar os testes a partir do terminal sem a interface  
+
     npx cypress run ou ./node_modules/.bin/cypress run
+    
 Documentação do Cypress se encontra no link abaixo:
 https://docs.cypress.io/guides/getting-started/installing-cypress.html
